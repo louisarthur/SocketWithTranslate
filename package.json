@@ -8,10 +8,10 @@
   "repository": {
     "url": "http://",
     "type": "git"
-
   },
-  
-  "scripts": {"dev": "nodemon app.js"},
+  "scripts": {
+    "dev": "nodemon app.js"
+  },
   "dependencies": {
     "bootstrap": "^4.3.1",
     "express": "^4.14.0",
