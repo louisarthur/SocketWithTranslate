@@ -17,16 +17,15 @@ io.on("connection", function(client) {
   });
 
   client.on("send", function(msg, origem, destino) {
-    console.log("Message: " + msg + origem + destino);
+    console.log("MENSAGEM CRIPTOGRAFADA -->" + msg);
     var desencrypt = CryptoJS.AES.decrypt(msg, "agua").toString(
       CryptoJS.enc.Utf8
     );
-    console.log(desencrypt);
+    console.log("MENSAGEM DESCRIPTOGRAFADA --> " + desencrypt);
     translatte(desencrypt, { from: origem, to: destino })
       .then(res => {
-        console.log(res.text);
         var encrypt = CryptoJS.AES.encrypt(res.text, "cuzcuz").toString();
-        console.log(encrypt);
+        console.log("TRADUÇÃO ENCRIPTADA --> " + encrypt);
         client.emit("translate", encrypt);
       })
       .catch(err => {
