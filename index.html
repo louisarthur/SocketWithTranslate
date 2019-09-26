@@ -1,23 +1,19 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-  <meta charset="UTF-8">
-  <title>SockeTranslate</title>
-  <link rel="stylesheet" href="assets/bootstrap.css">
-  <link rel="stylesheet" href="assets/css.css">
+  <head>
+    <meta charset="UTF-8" />
+    <title>SockeTranslate</title>
+    <link rel="stylesheet" href="assets/bootstrap.css" />
+    <link rel="stylesheet" href="assets/css.css" />
+  </head>
+  <body>
+    <div class="container_superior" id="sup">
+      <div>
+        Tr@dut0R dE t3xt0
+      </div>
+    </div>
 
-
-</head>
-<body>
-
-<div class="container_superior" id="sup">
-  <div>
-    Tr@dut0R dE t3xt0
-  </div>
-
-</div>
-
-<!-- Navigation 
+    <!-- Navigation 
 <nav class="navbar navbar-expand-lg navbar-dark bg-dark static-top">
     <div class="container">
       <a class="navbar-brand" href="#">Tradutor Online</a>
@@ -46,68 +42,86 @@
   </nav>
 -->
 
-<div class="nickname_container" id="nick">
-
-
-    <div>
-        <img src="assets/criptografar-truecrypt.png" width="70px"> 
-        <br><br>
-        <label for="nickname">Usuário:</label><br>
-        <input type="text" id="nickname" name="nickname" >
-    </div>
-    
-    <div>
-        <br><label for="password">Senha (mínimo de 6 caracteres):</label><br>
-        <form id="submit"><input type="password" id="password" name="password"
-                minlength="6" required></form>
-    </div>
-    <br>
-
-</div>
-
-<div id="chat" hidden>
-  <div class="row">
-      <div class="col-md-12">
-        <h1 class="col-md-2">Texto Original</h1>
-        
-        <div class="col-md-2" style="padding: 20px 20px 0px 20px;">
-          <select id="idiomaOrig" class="form-control">
-            <option value="">--Selecione o idioma original</option>
-            <option value="es">Espanhol</option>
-            <option value="fr">Francês</option>
-            <option value="en">Inglês</option>
-            <option value="pt">Português</option>
-          </select>              
-        </div>
-          
-        <div class="col-md-2" style="padding: 20px 0px 0px 0px;">
-          <select id="idiomaTran" class="form-control">
-            <option value="">--Selecione o idioma para tradução</option>
-            <option value="es">Espanhol</option>
-            <option value="fr">Francês</option>
-            <option value="en">Inglês</option>
-            <option value="pt">Português</option>
-          </select>              
-        </div>
-        
-        <div class="col-md-2"></div>
-
+    <div class="nickname_container" id="nick">
+      <div>
+        <img src="assets/criptografar-truecrypt.png" width="70px" />
+        <br /><br />
+        <label for="nickname">Usuário:</label><br />
+        <input type="text" id="nickname" name="nickname" />
       </div>
-      <br><br>
-      <textarea name="textarea" id="textarea" rows="10" cols="100%" maxlength="500"></textarea>
-      <br><button class="translate" id="translate">Traduzir</button>
-  </div>
-  <br>
-  <div class="row">
-    <div class="col-md-12">
-      <h1 class="col-md-3">Tradução</h1>
+
+      <div>
+        <br /><label for="password">Senha (mínimo de 6 caracteres):</label
+        ><br />
+        <form id="submit">
+          <input
+            type="password"
+            id="password"
+            name="password"
+            minlength="6"
+            required
+          />
+        </form>
+      </div>
+      <br />
     </div>
-    <textarea name="textTranslated" id="textTranslated" rows="10" cols="100%" maxlength="500"></textarea>
-  </div>
-</div>
-      
+
+    <div id="chat" hidden>
+      <div class="row">
+        <div class="col-md-12">
+          <h1 class="col-md-2">Texto Original</h1>
+
+          <div class="col-md-2" style="padding: 20px 20px 0px 20px;">
+            <select id="idiomaOrig" class="form-control">
+              <option value="">--Selecione o idioma original</option>
+              <option value="es">Espanhol</option>
+              <option value="fr">Francês</option>
+              <option value="en">Inglês</option>
+              <option value="pt">Português</option>
+            </select>
+          </div>
+
+          <div class="col-md-2" style="padding: 20px 0px 0px 0px;">
+            <select id="idiomaTran" class="form-control">
+              <option value="">--Selecione o idioma para tradução</option>
+              <option value="es">Espanhol</option>
+              <option value="fr">Francês</option>
+              <option value="en">Inglês</option>
+              <option value="pt">Português</option>
+            </select>
+          </div>
+
+          <div class="col-md-2"></div>
+        </div>
+        <br /><br />
+        <textarea
+          name="textarea"
+          id="textarea"
+          rows="10"
+          cols="100%"
+          maxlength="500"
+        ></textarea>
+        <br /><button class="translate" id="trad">Traduzir</button>
+      </div>
+      <br />
+      <div class="row">
+        <div class="col-md-12">
+          <h1 class="col-md-3">Tradução</h1>
+        </div>
+        <textarea
+          name="textTranslated"
+          id="textTranslated"
+          rows="10"
+          cols="100%"
+          maxlength="500"
+        ></textarea>
+      </div>
+    </div>
+
     <script src="node_modules/jquery/dist/jquery.min.js"></script>
     <script src="node_modules/socket.io-client/socket.io.js"></script>
     <script src="assets/js.js"></script>
-</body>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/crypto-js/3.1.2/rollups/aes.js"></script>
+    <!-- <script src="node_modules/cryptojs/cryptojs.js"></script> -->
+  </body>
 </html>

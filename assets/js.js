@@ -12,14 +12,18 @@ $(document).ready(function() {
     socket.emit("join", name);
   });
 
-  $("#textarea").change(function() {
+  $("#trad").click(function() {
     var text = $("#textarea").val();
     var origem = $("#idiomaOrig").val();
     var destino = $("#idiomaTran").val();
-    socket.emit("send", text, origem, destino);
+    var encrypted = CryptoJS.AES.encrypt(text, "agua").toString();
+    socket.emit("send", encrypted, origem, destino);
   });
 
   socket.on("translate", function(msg) {
-    $("#textTranslated").html(msg);
+    var deseencrypt = CryptoJS.AES.decrypt(msg, "cuzcuz").toString(
+      CryptoJS.enc.Utf8
+    );
+    $("#textTranslated").html(deseencrypt);
   });
 });
